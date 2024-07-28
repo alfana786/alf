@@ -1,6 +1,6 @@
-import io 
+#spyder 
 #Building a data frame
-Import pandas as pd
+import pandas as pd
 sample_dataframe_df= pd. read_csv (‘D: \AI\sample.csv’) #path
 
 print(type(sample_dataframe_df))
@@ -8,8 +8,7 @@ print(type(sample_dataframe_df))
 #Display first few entries in the data frame
 print(pd.set_option('display.max_columns',5))
 print(sample_dataframe_df.head(5))
-# displays first n rows of the data frame  
-dataframe_name.head (n)
+
 
 
 #summary of dataframe
