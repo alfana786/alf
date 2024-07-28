@@ -29,7 +29,7 @@ print (pervalue)
 bd=numpy. random. uniform (0, 10, 350)
 print(bd)
 #barplot
-sea.barplot(x='Kms Driven' ,  y=' ',  data=df)
+sea.barplot(x='Kms Driven' ,  y=' ',  data=df) # x='column name ',y='column name '
 
 sea.barplot(x='Kms Driven' ,  y=' ',hue ='year'  data=df)
 
@@ -44,9 +44,9 @@ sea.distplot(sp)
 plot.scatter(x=sp,y=df[''])
 
 #pairplot
-features=['','']
+features=['','']#columns names 
 sea.pairplot(df[features],height=3)
 *heatmap
-features=['','']
+features=['','']#column names 
 sea.heatmap(df[features],annot=True)
 
