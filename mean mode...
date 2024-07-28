@@ -1,0 +1,31 @@
+import numpy
+import pandas as pd
+from scipy import stats
+import matplotlib.pyplot as plot
+import seaborn as sea
+%matplotlib inline
+
+df=pd.read_csv('C: ' )
+sp=df['Selling Price' ]
+
+meanval=numpy. mean (sp)
+print (meanval)
+
+medianval=numpy. median(sp)
+print (medianval)
+
+modeval=stats.mode(sp)
+print (modeval)
+
+stdval=numpy. std (sp)
+print(stdval)
+
+varvalue=numpy. var(sp)
+print (varvalue)
+
+pervalue=numpy. percentile(sp, 95)
+print (pervalue)
+
+bd=numpy. random. uniform (e, 10, 350)
+print(bd)
+sea.barplot(x='Kms Driven' ,  y=' ',  data=df)
