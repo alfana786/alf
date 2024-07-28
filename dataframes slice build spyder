@@ -1,3 +1,4 @@
+import io 
 #Building a data frame
 Import pandas as pd
 sample_dataframe_df= pd. read_csv (‘D: \AI\sample.csv’) #path
