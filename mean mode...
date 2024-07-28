@@ -26,6 +26,27 @@ print (varvalue)
 pervalue=numpy. percentile(sp, 95)
 print (pervalue)
 
-bd=numpy. random. uniform (e, 10, 350)
+bd=numpy. random. uniform (0, 10, 350)
 print(bd)
+#barplot
 sea.barplot(x='Kms Driven' ,  y=' ',  data=df)
+
+sea.barplot(x='Kms Driven' ,  y=' ',hue ='year'  data=df)
+
+plot.hist(sp)
+
+plot.hist(sp,bins=5)
+#boxplot
+sea.boxplot(sp)
+#densiyy plot
+sea.distplot(sp)
+#scatter
+plot.scatter(x=sp,y=df[''])
+
+#pairplot
+features=['','']
+sea.pairplot(df[features],height=3)
+*heatmap
+features=['','']
+sea.heatmap(df[features],annot=True)
+
