@@ -1,3 +1,4 @@
+from collections import deque
 def is_valid_state(state, x, y):
     """Check if the state is within the bounds of the jug capacities."""
     a, b = state
