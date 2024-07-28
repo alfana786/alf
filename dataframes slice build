@@ -1,0 +1,43 @@
+#Building a data frame
+Import pandas as pd
+sample_dataframe_df= pd. read_csv (‘D: \AI\sample.csv’)
+
+print(type(sample_dataframe_df))
+  
+#Display first few entries in the data frame
+print(pd.set_option('display.max_columns',5))
+print(sample_dataframe_df.head(5))
+# displays first n rows of the data frame  
+dataframe_name.head (n)
+
+
+#summary of dataframe
+print(list(sample_dataframe_df.columns))
+
+#	transpose
+print(sample_dataframe_df.head(5).transpose()) 
+
+#Finding the dimension of data set
+print(sample_data_frame_df.shape)
+
+
+#slicing the dataDataframe_name [lowerbound: upper bound]
+	print(sample_dataframe_df[0:10])
+
+#To retrieve the last five data’s in the data set
+print(sample_dataframe_df[-5:])
+
+#To retrieve particular column from the data set
+print(sample_dataframe_df['water'])
+
+#	Occurrence of each unique value
+print(sample_dataframe_df.animal.value_counts())
+
+#Record Filter
+#The cell value in the given column is compared with some condition and if the condition is satisfied then the value of the column will be printed
+print(sample_dataframe_df[sample_dataframe_df['water']>90])
+
+#Removing a particular row/column
+print(sample_dataframe_df.drop('slno', inplace= True, axis=1))
+print(list(sample_dataframe_df.columns))
+
