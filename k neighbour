@@ -2,7 +2,7 @@ fron sklearn.neighbors importKNeighborsClassifier
 from sklearn. model _ selection import train_test_split
 Import pandas as pd
 
-sample_dataframe_df=pd.read_csv('')
+sample_dataframe_df=pd.read_csv('path name ')
 sample_dataframe_df. head ( 5 )
 sample_dataframe_df[Species].value_counts()
 x=sample_dataframe_df.drop(['id','species'],axis=1)
