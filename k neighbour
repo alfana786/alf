@@ -13,3 +13,26 @@ train_x,test_x,train_y,test_y=train_test_split(x,y,train_size=0.8,random_state=8
 knn=KNeighborsClassifier(n_neighbors=5)
 knn.fit(train_x,train_y)
 knn.score(test_x,test_y)
+
+#Algorithm for K-Nearest Neighbors Classification
+START
+STEP 1 Import necessary libraries:
+Import KNeighborsClassifier from sklearn.neighbors.
+Import train_test_split from sklearn.model_selection.
+Import pandas as pd.
+STEP 2 Load the Iris dataset:
+Read the CSV file into a DataFrame df.
+Print the first 5 rows of the DataFrame.
+Display the value counts for the 'Species' column.
+STEP 3 Prepare the feature and target variables:
+Drop the 'Id' and 'Species' columns from df to create the feature set x.
+Set the 'Species' column as the target variable y.
+Print the first 5 rows of x and y.
+STEP4 Split the dataset:
+Use train_test_split to split x and y into training and testing sets with an 80-20 split.
+Set random_state to 80 for reproducibility.
+STEP 5 Train the K-Nearest Neighbors model:
+Instantiate the KNeighborsClassifier with n_neighbors set to 5.
+Fit the model using the training data (train_x and train_y).
+STEP 6 Evaluate the model:Compute and print the accuracy score of the model on the test set (test_x and test_y).
+END
