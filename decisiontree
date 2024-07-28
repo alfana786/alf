@@ -14,3 +14,27 @@ estimated=DecisionTreeC1assifier( ).fit(train_x, train_y )
 predict_y=estimated.predict(test_x )
 print( predict_y)
 print(accuracy_score(test_y,predict_y))
+
+
+#STEP 1 Import necessary libraries:
+– Import numpy as np.
+– Import train_test_split from sklearn.model_selection.
+– Import pandas as pd.
+– Import DecisionTreeClassifier from sklearn.tree.
+– Import accuracy_score from sklearn.metrics.
+– STEP 2 Load the Loan Repayment dataset:
+– Read the CSV file into a DataFrame df.
+– STEP 3 Prepare the feature and target variables:
+– Drop the ‘Result’ column from df to create the feature set x.
+– Set the ‘Result’ column as the target variable y.
+– STEP 4 Split the dataset:
+– Use train_test_split to split x and y into training and testing sets with a 20-80 split.
+– Set random_state to 100 for reproducibility.
+– STEP 5 Train the Decision Tree model:
+– Instantiate the DecisionTreeClassifier.
+– Fit the model using the training data (train_x and train_y).
+– STEP 6 Make predictions and evaluate the model:
+– Use the trained model to predict the target variable on the test set (test_x).
+– Print the predicted values.
+– Compute and print the accuracy score of the model using the actual and predicted
+values (test_y and predict_y).#
