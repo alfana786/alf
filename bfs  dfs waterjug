@@ -1,0 +1,74 @@
+def is_valid_state(state, x, y):
+    """Check if the state is within the bounds of the jug capacities."""
+    a, b = state
+    return 0 <= a <= x and 0 <= b <= y
+
+def bfs(x, y, d):
+    visited = set()
+    queue = deque([(0, 0)])
+
+    while queue:
+        a, b = queue.popleft()
+        if (a, b) in visited:
+            continue
+
+        print("Visiting state: ({}, {})".format(a, b))
+        visited.add((a, b))
+
+        if a == d or b == d:
+            return True
+
+        # Generate all possible states
+        possible_states = [
+            (x, b),  # Fill jug 1
+            (a, y),  # Fill jug 2
+            (0, b),  # Empty jug 1
+            (a, 0),  # Empty jug 2
+            (min(a + b, x), b - (min(a + b, x) - a)),  # Pour jug 2 into jug 1
+            (a - (min(a + b, y) - b), min(a + b, y))   # Pour jug 1 into jug 2
+        ]
+
+        for state in possible_states:
+            if is_valid_state(state, x, y) and state not in visited:
+                queue.append(state)
+
+    return False
+
+def dfs(x, y, d):
+    visited = set()
+    stack = [(0, 0)]
+
+    while stack:
+        a, b = stack.pop()
+        if (a, b) in visited:
+            continue
+
+        print("Visiting state: ({}, {})".format(a, b))
+        visited.add((a, b))
+
+        if a == d or b == d:
+            return True
+
+        # Generate all possible states
+        possible_states = [
+            (x, b),  # Fill jug 1
+            (a, y),  # Fill jug 2
+            (0, b),  # Empty jug 1
+            (a, 0),  # Empty jug 2
+            (min(a + b, x), b - (min(a + b, x) - a)),  # Pour jug 2 into jug 1
+            (a - (min(a + b, y) - b), min(a + b, y))   # Pour jug 1 into jug 2
+        ]
+
+        for state in possible_states:
+            if is_valid_state(state, x, y) and state not in visited:
+                stack.append(state)
+
+    return False
+
+# Example usage
+x = 3
+y = 5
+d = 4
+
+print("BFS Result: {}".format(bfs(x, y, d)))
+print("DFS Result: {}".format(dfs(x, y, d)))
