@@ -1,0 +1,43 @@
+
+import heapq
+def uniform_cost_search(graph, start, goal):
+    # Priority queue for the frontier with tuples of (cost, node, path)
+    frontier = [(0, start, [])]
+    # Explored set to keep track of explored nodes
+    explored = set()
+    
+    while frontier:
+        # Pop the node with the lowest cost
+        cost, current_node, path = heapq.heappop(frontier)
+        
+        # If we have reached the goal, return the path and cost
+        if current_node == goal:
+            return path + [current_node], cost
+        
+        # If the current node has been explored, skip it
+        if current_node in explored:
+            continue
+        
+        # Mark the current node as explored
+        explored.add(current_node)
+        
+        # Add neighbors to the frontier
+        for neighbor, edge_cost in graph.get(current_node, {}).items():
+            if neighbor not in explored:
+                heapq.heappush(frontier, (cost + edge_cost, neighbor, path + [current_node]))
+    
+    # If the goal was not reached, return None
+    return None, float('inf')
+
+# Example graph represented as an adjacency list
+graph = {
+    'A': {'B': 1, 'C': 4},
+    'B': {'C': 2, 'D': 5},
+    'C': {'D': 1},
+    'D': {}
+}
+
+start = 'A'
+goal = 'D'
+path, cost = uniform_cost_search(graph, start, goal)
+print(f"Path: {path}, Cost: {cost}")
