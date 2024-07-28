@@ -5,7 +5,7 @@ import matplotlib.pyplot as plot
 import seaborn as sea
 %matplotlib inline
 
-df=pd.read_csv('C: ' )
+df=pd.read_csv('C:path name  ' )
 sp=df['Selling Price' ]
 
 meanval=numpy. mean (sp)
