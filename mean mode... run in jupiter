@@ -1,3 +1,4 @@
+#jupiter code 
 import numpy
 import io 
 import pandas as pd
@@ -42,7 +43,7 @@ sea.boxplot(sp)
 #densiyy plot
 sea.distplot(sp)
 #scatter
-plot.scatter(x=sp,y=df[''])
+plot.scatter(x=sp,y=df['column name ']) # or x=df['column name ']
 
 #pairplot
 features=['','']#columns names 
