@@ -18,11 +18,11 @@ print(list(sample_dataframe_df.columns))
 print(sample_dataframe_df.head(5).transpose()) 
 
 #Finding the dimension of data set
-print(sample_data_frame_df.shape)
+print(sample_dataframe_df.shape)
 
 
 #slicing the dataDataframe_name [lowerbound: upper bound]
-	print(sample_dataframe_df[0:10])
+print(sample_dataframe_df[0:10])
 
 #To retrieve the last five data’s in the data set
 print(sample_dataframe_df[-5:])
