@@ -94,3 +94,75 @@ if __name__ == '__main__':
 	BFS(Jug1, Jug2, target)
 
 
+def DFS(a, b, target):
+    m = {}
+    isSolvable = False
+    path = []
+
+    # Stack for the DFS approach
+    stack = [(0, 0)]
+
+    while stack:
+        u = stack.pop()
+        
+        # If this state is already visited
+        if (u[0], u[1]) in m:
+            continue
+        if u[0] > a or u[1] > b or u[0] < 0 or u[1] < 0:
+            continue
+
+        # Filling the vector for constructing the solution path
+        path.append([u[0], u[1]])
+
+        # Marking current state as visited
+        m[(u[0], u[1])] = 1
+
+        # If we reach the solution state
+        if u[0] == target or u[1] == target:
+            isSolvable = True
+
+            if u[0] == target and u[1] != 0:
+                path.append([u[0], 0])
+            elif u[1] == target and u[0] != 0:
+                path.append([0, u[1]])
+
+            # Print the solution path
+            for state in path:
+                print(f"({state[0]}, {state[1]})")
+            break
+
+        # If we have not reached the final state, start developing intermediate states
+        stack.append((u[0], b))  # Fill Jug2
+        stack.append((a, u[1]))  # Fill Jug1
+
+        for ap in range(max(a, b) + 1):
+            # Pour amount ap from Jug2 to Jug1
+            c, d = u[0] + ap, u[1] - ap
+
+            # Check if this state is possible or not
+            if c == a or (d == 0 and d >= 0):
+                stack.append((c, d))
+
+            # Pour amount ap from Jug1 to Jug2
+            c, d = u[0] - ap, u[1] + ap
+
+            # Check if this state is possible or not
+            if (c == 0 and c >= 0) or d == b:
+                stack.append((c, d))
+
+        # Empty Jug2
+        stack.append((u[0], 0))
+
+        # Empty Jug1
+        stack.append((0, u[1]))
+
+    # No solution exists if isSolvable is False
+    if not isSolvable:
+        print("No solution")
+
+# Driver code
+if __name__ == '__main__':
+    Jug1, Jug2, target = 4, 3, 2
+    print("Path from initial state to solution state ::")
+
+    DFS(Jug1, Jug2, target)
