@@ -11,13 +11,13 @@ df=pd.read_csv('C:path name  ' )
 sp=df['Selling Price' ]
 
 meanval=numpy. mean (sp)
-print (meanval)
+print(meanval)
 
 medianval=numpy. median(sp)
-print (medianval)
+print(medianval)
 
 modeval=stats.mode(sp)
-print (modeval)
+print(modeval)
 
 stdval=numpy. std (sp)
 print(stdval)
