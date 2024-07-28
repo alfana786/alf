@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
-
+import io
 sample_dataframe_df =pd.read_csv('path ')
 x=sample_dataframe_df .drop([' Result'] , axis=1)
 y=sample_dataframe_df[' Result']
