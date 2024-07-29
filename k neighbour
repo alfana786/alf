@@ -1,9 +1,12 @@
-fron sklearn.neighbors importKNeighborsClassifier
+#jupitercode
+from sklearn.neighbors importKNeighborsClassifier
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import io
+
 sample_dataframe_df=pd.read_csv('path name ')
 sample_dataframe_df.head(5)
+
 sample_dataframe_df['clumn name '].value_counts()
 x=sample_dataframe_df.drop(['id','species'],axis=1) #column name 
 y=sample_dataframe_df['Species'] #column name 
