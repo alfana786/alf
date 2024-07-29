@@ -4,15 +4,16 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 import io
+
 sample_dataframe_df =pd.read_csv('path ')
-x=sample_dataframe_df .drop([' Result'] , axis=1)
+
+x=sample_dataframe_df.drop([' Result'] , axis=1)
 y=sample_dataframe_df[' Result']
 
-
-train_x,test x, train_y,test_y=train_test split(x,y,test_size=0.2,random_state=100)
-estimated=DecisionTreeC1assifier( ).fit(train_x, train_y )
-predict_y=estimated.predict(test_x )
-print( predict_y)
+train_x,test_x,train_y,test_y=train_test_split(x,y,test_size=0.2,random_state=100)
+estimated=DecisionTreeC1assifier( ).fit(train_x,train_y)
+predict_y=estimated.predict(test_x)
+print(predict_y)
 print(accuracy_score(test_y,predict_y))
 
 
