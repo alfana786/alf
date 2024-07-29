@@ -7,8 +7,8 @@ sample_dataframe_df.head(5)
 sample_dataframe_df['clumn name '].value_counts()
 x=sample_dataframe_df.drop(['id','species'],axis=1) #column name 
 y=sample_dataframe_df['Species'] #column name 
-x.head(5)
-y.head(5)
+print(x.head(5))
+print(y.head(5))
 train_x,test_x,train_y,test_y=train_test_split(x,y,train_size=0.8,random_state=80)
 knn=KNeighborsClassifier(n_neighbors=5)
 knn.fit(train_x,train_y)
